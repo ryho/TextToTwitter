@@ -20,6 +20,7 @@ import kotlin.math.min
 
 class SmsReceiver : BroadcastReceiver() {
 
+    // onReceive is called by the OS when the phone receives an SMS.
     override fun onReceive(context: Context, intent: Intent) {
         val messages = Sms.Intents.getMessagesFromIntent(intent)
         if (messages.isEmpty()) {
@@ -108,7 +109,7 @@ class SmsReceiver : BroadcastReceiver() {
                         val tweet = resp.body()
                         inReplyToStatusId = tweet?.id
                     } else {
-                        reportMessage(adminNumber, "Failed to send text: " + resp.errorBody())
+                        reportMessage(adminNumber, "Failed to post Tweet: ${resp.code()} ${resp.errorBody()?.byteStream().toString()}")
                         break
                     }
                 }
@@ -126,6 +127,7 @@ class SmsReceiver : BroadcastReceiver() {
         }
     }
 
+    // reportMessage sends a message to the Admin number if configured, or logs a message.
     private fun reportMessage(adminNumber: String?, body: String) {
         if (!adminNumber.isNullOrEmpty()) {
             // Start a thread, in case we are in a context where we are not allowed to send SMS.

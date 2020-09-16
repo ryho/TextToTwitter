@@ -15,7 +15,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="add">Add</string>
-    <string name="credentials_header">Twitter API Credentials Set?</string>
+    <string name="credentials_header">Twitter API Credentials</string>
     <string name="from_number">From Number</string>
     <string name="to_twitter_account">To Twitter Account</string>
     <string name="edit">Edit</string>
@@ -33,12 +33,8 @@
     <string name="instructions_intro">A few features can be controlled remotely by SMS from the admin number. You can set the Twitter API credentials, which are hard to type on a phone. You can also send SMS from this device\'s number, in case this app is not running on your main phone. Command examples:</string>
     <string name="api_key_example">API KEY\nYour Twitter API key\nYour Twitter API secret key (see dev.twitter.com)</string>
     <string name="send_example">SEND\nRecipient number\nMessage to send</string>
-    <string name="title_activity_set_credentials">SetCredentials</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_set_credentials">Set API Credentials</string>
+    <string name="api_key_instruction">If you have not already, visit https://devs.twitter.com to create a Twitter app. Select your app, click the "Keys and tokens" tab and you will find these keys in the "Consumer API keys" section.</string>
+    <string name="api_key">API key:</string>
+    <string name="api_secret_key">API secret key</string>
 </resources>

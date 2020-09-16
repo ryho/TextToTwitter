@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_MMS" />
-    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+<!--    <uses-permission android:name="android.permission.RECEIVE_MMS" />-->
+<!--    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -20,7 +20,11 @@
         <activity
             android:name=".SetCredentials"
             android:label="@string/title_activity_set_credentials"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden">
@@ -52,21 +56,23 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <service android:name="com.android.mms.transaction.TransactionService" /> <!-- BroadcastReceiver that listens for incoming SMS messages (including when NOT the default) -->
+<!--        <service android:name="com.android.mms.transaction.TransactionService" />-->
+        <!-- BroadcastReceiver that listens for incoming SMS messages (including when NOT the default) -->
         <receiver
             android:name=".SmsReceiver"
             android:permission="android.permission.BROADCAST_SMS">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
-        </receiver> <!-- BroadcastReceiver that listens for incoming MMS messages (including when NOT the default) -->
-        <receiver android:name=".MmsReceiver">
-            <intent-filter>
-                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
-
-                <data android:mimeType="application/vnd.wap.mms-message" />
-            </intent-filter>
         </receiver>
+        <!-- BroadcastReceiver that listens for incoming MMS messages (including when NOT the default) -->
+<!--        <receiver android:name=".MmsReceiver">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />-->
+
+<!--                <data android:mimeType="application/vnd.wap.mms-message" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
     </application>
 
 </manifest>

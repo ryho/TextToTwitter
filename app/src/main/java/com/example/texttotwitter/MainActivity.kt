@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 const val ACTIVITY_RESULT__NEW_FORWARD = 1
 const val ACTIVITY_RESULT__SET_ADMIN_NUMBER = 2
+const val ACTIVITY_RESULT__SET_API_CREDENTIAL = 3
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,16 +56,20 @@ class MainActivity : AppCompatActivity() {
 
     fun regenTwitterAPI() {
         val authConfig = PreferencesUtil.getTwitterAuthConfig()
-        if (authConfig != null ) {
-            credentialStatus.text = getString(R.string.yes)
+        if (authConfig != null) {
             val twitterConfig = TwitterConfig.Builder(this)
                 .twitterAuthConfig(authConfig)
                 //.debug(true)
                 .build()
             Twitter.initialize(twitterConfig)
-
+            apiKeyDisplay.text = "Key: "+authConfig.consumerKey
+            var secretText ="Secret Key: "
+            if (authConfig.consumerKey.isNotEmpty()) {
+                secretText += "*******"
+            }
+            apiSecretKeyDisplay.text = secretText
         } else {
-            credentialStatus.text = getString(R.string.no)
+            apiKeyDisplay.text = "Not set"
         }
     }
 
@@ -134,27 +139,32 @@ class MainActivity : AppCompatActivity() {
             }
             (changeApiCredentials.id) -> {
                 val intent = Intent(this, SetCredentials::class.java)
-                startActivityForResult(intent, ACTIVITY_RESULT__NEW_FORWARD)
+                startActivityForResult(intent, ACTIVITY_RESULT__SET_API_CREDENTIAL)
             }
         }
     }
 
+    // onActivityResult gets called automatically when activities return.
+    // The UI is updated depending on which setting was changed.
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
             ACTIVITY_RESULT__NEW_FORWARD -> {
                 if (resultCode == RESULT_OK) {
-                    // TODO Extract the data returned from the child Activity.
-//                    val returnValue = data?.getStringExtra("some_key")
                     regenForwardsTable()
                     Toast.makeText(this, "Added a new forward!", Toast.LENGTH_LONG).show()
                 }
             }
-
             ACTIVITY_RESULT__SET_ADMIN_NUMBER -> {
                 if (resultCode == RESULT_OK) {
                     regenAdminNumberDisplay()
                     Toast.makeText(this, "Updated the admin number!", Toast.LENGTH_LONG).show()
+                }
+            }
+            ACTIVITY_RESULT__SET_API_CREDENTIAL -> {
+                if (resultCode == RESULT_OK) {
+                    regenTwitterAPI()
+                    Toast.makeText(this, "Updated the Twitter API keys!", Toast.LENGTH_LONG).show()
                 }
             }
         }

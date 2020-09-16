@@ -58,7 +58,11 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/credentialStatus"
+        android:id="@+id/apiKeyDisplay" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/apiSecretKeyDisplay"
         android:paddingBottom="20dp" />
     <Button
         android:id="@+id/changeApiCredentials"
