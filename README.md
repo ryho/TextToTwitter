@@ -4,6 +4,8 @@ This is an Android app that receives text messages (SMS) and posts their content
 I created this app to forward texts from 88022 (Trump Campaign) to [@TrumpSMS](https://twitter.com/TrumpSMS) and 30330
 (Biden Campaign) to [@BidenTexts](https://twitter.com/BidenTexts). Presumably this will be useful for other purposes.
 
+![Example Image](/images/screenshot.png)
+
 ## Requires
 - Android phone with at least Android 4.4 KitKat
 - Active SMS plan
