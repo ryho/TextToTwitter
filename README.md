@@ -5,7 +5,7 @@ I created this app to forward texts from 88022 (Trump Campaign) to [@TrumpSMS](h
 (Biden Campaign) to [@BidenTexts](https://twitter.com/BidenTexts). Presumably this will be useful for other purposes.
 
 ## Requires
-- Android phone
+- Android phone with at least Android 4.4 KitKat
 - Active SMS plan
 - Twitter account
 - Twitter API credentials (which now requires submitting an application)

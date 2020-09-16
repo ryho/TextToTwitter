@@ -8,6 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.texttotwitter"
+        // The SMS APIs were undocumented prior to Android 4.4 - KitKat (API 19)
+        // https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
