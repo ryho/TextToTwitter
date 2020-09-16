@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:windowSoftInputMode="stateHidden"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+    <TextView
+        android:text="@string/admin_no"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" />
+
+    <TextView
+        android:id="@+id/adminNumberTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/editAdminButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:onClick="onClick"
+        android:layout_marginBottom="20dp" />
+    <TextView
+        android:text="@string/registered_forwards"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:paddingBottom="20dp"/>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/forwardsTable"
+        android:stretchColumns="0,1"
+        android:paddingBottom="10dp">
+    </TableLayout>
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:onClick="onClick"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/credentials_header" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/credentialStatus"
+        android:paddingBottom="20dp" />
+    <Button
+        android:id="@+id/changeApiCredentials"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:onClick="onClick"
+        android:layout_marginBottom="20dp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/instruction_Header" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/instructions_intro" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/api_key_example"
+        android:paddingBottom="20dp"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/send_example" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

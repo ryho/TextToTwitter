@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".AddForwardActivity2"
+    android:layout_margin="20dp">
+    <ProgressBar
+        android:id="@+id/loadingSpinner"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/successLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:context=".AddForwardActivity2">
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authorize_this_app_on_twitter" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authorize_directions"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/visitTwitterButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to_twitter"
+            android:layout_marginBottom="20dp" />
+        <Button
+            android:id="@+id/sendToAdminButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/send_to_admin"
+            android:onClick="onClick"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/codeEntry"
+            android:text="@string/code" />
+        <EditText
+            android:id="@+id/codeEntry"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="123-346-7890"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/saveCodeButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:enabled="false"
+            android:layout_marginBottom="20dp" />
+    </LinearLayout>
+</LinearLayout>

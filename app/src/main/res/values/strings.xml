@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Text To Twitter</string>
+    <string name="admin_no">Admin Number:</string>
+    <string name="save">Save</string>
+    <string name="mobile_no">Destination Number:</string>
+    <string name="message">Message:</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="registered_forwards">Registered Forwards</string>
+    <string name="none">None</string>
+    <string name="delete">Delete</string>
+    <string name="send_msg">Message sent successfully!</string>
+    <string name="admin_updated_msg">Admin Phone Number Updated!</string>
+    <string name="send_a_text">Send a text</string>
+    <string name="instruction_Header">Instructions</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add">Add</string>
+    <string name="credentials_header">Twitter API Credentials Set?</string>
+    <string name="from_number">From Number</string>
+    <string name="to_twitter_account">To Twitter Account</string>
+    <string name="edit">Edit</string>
+    <string name="update_admin_number">Update Admin Number</string>
+    <string name="admin_info_message">The admin number is used to remotely update the credentials and to remotely send text messages. It will also receive error reports. See the instructions to learn how to use the remote features.</string>
+    <string name="admin_not_set">Not set</string>
+    <string name="admin_number">Admin Number</string>
+    <string name="next">Next</string>
+    <string name="example_number">867–5309</string>
+    <string name="authorize_this_app_on_twitter">Authorize this app on Twitter</string>
+    <string name="authorize_directions">Please visit this link and submit the code that it gives you below.</string>
+    <string name="go_to_twitter">Go to Twitter</string>
+    <string name="send_to_admin">Send link to the Admin Number</string>
+    <string name="code">Code:</string>
+    <string name="instructions_intro">A few features can be controlled remotely by SMS from the admin number. You can set the Twitter API credentials, which are hard to type on a phone. You can also send SMS from this device\'s number, in case this app is not running on your main phone. Command examples:</string>
+    <string name="api_key_example">API KEY\nYour Twitter API key\nYour Twitter API secret key (see dev.twitter.com)</string>
+    <string name="send_example">SEND\nRecipient number\nMessage to send</string>
+    <string name="title_activity_set_credentials">SetCredentials</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SetAdminNumber"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+    <TextView
+        android:textStyle="bold"
+        android:text="@string/update_admin_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@string/admin_info_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/adminNumberInput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="867-5309"
+        android:hint="@string/admin_number"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:enabled="false"
+        android:onClick="onClick"
+        android:layout_marginBottom="20dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

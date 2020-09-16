@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddForwardActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/from_number" />
+
+    <EditText
+        android:id="@+id/fromNumberInput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/example_number"
+        android:inputType="phone"
+        android:autofillHints="@string/example_number" />
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:onClick="onClick"
+        android:enabled="false"
+        android:layout_marginBottom="20dp" />
+</LinearLayout>
