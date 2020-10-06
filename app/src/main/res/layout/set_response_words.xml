@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SetAdminNumber"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+    <TextView
+        android:textStyle="bold"
+        android:text="@string/update_the_auto_response_words"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/responseWordsText"/>
+    <TextView
+        android:text="@string/response_words_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/responseWordsText"
+        android:paddingBottom="10dp"
+        android:autofillHints=""
+        android:text=""
+        android:inputType="textCapCharacters">
+    </EditText>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:onClick="onClick"
+        android:layout_marginBottom="20dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

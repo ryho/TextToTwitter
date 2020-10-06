@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 const val ACTIVITY_RESULT__NEW_FORWARD = 1
 const val ACTIVITY_RESULT__SET_ADMIN_NUMBER = 2
 const val ACTIVITY_RESULT__SET_API_CREDENTIAL = 3
+const val ACTIVITY_RESULT__SET_RESPONSE_WORDS = 4
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         // Sets up the table with the list of forwards from the saved preferences
         regenForwardsTable()
+
+        // Displays the auto response words, separated by commas.
+        regenResponseWords()
 
         // Register the key received BroadcastReceiver
         // This allows the code that receives the text message with the new API key to call the MainActivity
@@ -62,14 +66,23 @@ class MainActivity : AppCompatActivity() {
                 //.debug(true)
                 .build()
             Twitter.initialize(twitterConfig)
-            apiKeyDisplay.text = "Key: "+authConfig.consumerKey
-            var secretText ="Secret Key: "
+            apiKeyDisplay.text = getString(R.string.key_header, authConfig.consumerKey)
             if (authConfig.consumerKey.isNotEmpty()) {
-                secretText += "*******"
+                apiSecretKeyDisplay.text = getString(R.string.secret_key_set)
+            } else {
+                apiSecretKeyDisplay.text = getString(R.string.secret_key_unset)
             }
-            apiSecretKeyDisplay.text = secretText
         } else {
-            apiKeyDisplay.text = "Not set"
+            apiKeyDisplay.text = getString(R.string.not_set)
+        }
+    }
+
+    private fun regenResponseWords() {
+        val responseWords = PreferencesUtil.getResponseWords()
+        if (responseWords.isNotEmpty()) {
+            autoRespondWordsText.text = responseWords.joinToString(", ")
+        } else {
+            autoRespondWordsText.text = getString(R.string.not_set)
         }
     }
 
@@ -137,9 +150,13 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, AddForwardActivity::class.java)
                 startActivityForResult(intent, ACTIVITY_RESULT__NEW_FORWARD)
             }
-            (changeApiCredentials.id) -> {
+            (editApiCredentials.id) -> {
                 val intent = Intent(this, SetCredentials::class.java)
                 startActivityForResult(intent, ACTIVITY_RESULT__SET_API_CREDENTIAL)
+            }
+            (editAutoRespondWords.id) -> {
+                val intent = Intent(this, SetResponseWords::class.java)
+                startActivityForResult(intent, ACTIVITY_RESULT__SET_RESPONSE_WORDS)
             }
         }
     }
@@ -167,6 +184,12 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Updated the Twitter API keys!", Toast.LENGTH_LONG).show()
                 }
             }
+            ACTIVITY_RESULT__SET_RESPONSE_WORDS -> {
+                if (resultCode == RESULT_OK) {
+                    regenResponseWords()
+                    Toast.makeText(this, "Updated the Auto Response words!", Toast.LENGTH_LONG).show()
+                }
+            }
         }
         // Hide the keyboard
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
@@ -182,7 +205,7 @@ class MainActivity : AppCompatActivity() {
             .setMessage("Do you really want to delete the forward from " + phoneNumber + " to @" + session!!.userName + "?")
             .setIcon(android.R.drawable.ic_dialog_alert)
             .setPositiveButton(
-                android.R.string.yes
+                android.R.string.ok
             ) { _, _->
                 PreferencesUtil.removeRegisteredNumber(phoneNumber)
                 regenForwardsTable()
@@ -192,7 +215,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
             }
-            .setNegativeButton(android.R.string.no, null).show()
+            .setNegativeButton(android.R.string.cancel, null).show()
     }
 }
 

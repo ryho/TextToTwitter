@@ -6,6 +6,13 @@ I created this app to forward texts from 88022 (Trump Campaign) to [@TrumpSMS](h
 
 ![Example Image](/images/screenshot.png)
 
+## Features
+- Forwards SMS from multiple numbers to multiple Twitter accounts
+- Auto respond to texts that contain a keyword (YES etc.)
+- Remote text message from admin number
+- Remote API credential updates from admin number
+- Reports all errors and SMS from unknown numbers to the admin number
+
 ## Requires
 - Android phone with at least Android 4.4 KitKat
 - Active SMS plan
@@ -13,13 +20,14 @@ I created this app to forward texts from 88022 (Trump Campaign) to [@TrumpSMS](h
 - Twitter API credentials (which now requires submitting an application)
 
 ## Admin Feature
-It has a remote admin feature so that all of the settings can be controlled via SMS. This prevents
+This has a remote admin feature so that all of the settings can be controlled via SMS. This prevents
 you from having to walk to your closet where you keep your Android phone to change the settings.
 You can also send text messages from the device's number to other numbers, from your admin number.
 This is useful because sometimes automated accounts ask you to opt-in for even more text messages 
 (Biden's Campaign asked for permission to send extra fact check messages during the RNC).
 This remote feature allows opting in to these prompts when you do not have physical access to the phone.
-This does, of course, require you to be subscribed to the texts on your personal phone and to be paying attention.
+This does, of course, require you to be paying attention. To avoid this issue you can add common keywords to 
+the auto response feature.
 
 ## Cell Plan Requirement
 This app requires the Android device to have an SMS plan. MMS require both an SMS plan and a data plan.

@@ -37,4 +37,11 @@
     <string name="api_key_instruction">If you have not already, visit https://devs.twitter.com to create a Twitter app. Select your app, click the "Keys and tokens" tab and you will find these keys in the "Consumer API keys" section.</string>
     <string name="api_key">API key:</string>
     <string name="api_secret_key">API secret key</string>
+    <string name="auto_response_words_header">Auto Response Words</string>
+    <string name="not_set">Not set</string>
+    <string name="update_the_auto_response_words">Update the Auto-Response words</string>
+    <string name="response_words_info">This app can automatically respond to keywords like YES to opt in to more texts. The words must be separated by commas.</string>
+    <string name="key_header">Key: %1$s</string>
+    <string name="secret_key_unset">Secret Key:</string>
+    <string name="secret_key_set">Secret Key: *******</string>
 </resources>

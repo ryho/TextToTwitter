@@ -2,7 +2,6 @@
 <ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:windowSoftInputMode="stateHidden"
         xmlns:tools="http://schemas.android.com/tools"
@@ -12,12 +11,12 @@
         android:orientation="vertical"
         android:layout_margin="20dp">
 
+<!-- Admin Number-->
     <TextView
         android:text="@string/admin_no"
         android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent" />
-
     <TextView
         android:id="@+id/adminNumberTextView"
         android:layout_width="fill_parent"
@@ -29,6 +28,8 @@
         android:text="@string/edit"
         android:onClick="onClick"
         android:layout_marginBottom="20dp" />
+
+<!-- Registered Forwards -->
     <TextView
         android:text="@string/registered_forwards"
         android:layout_height="wrap_content"
@@ -50,6 +51,26 @@
         android:onClick="onClick"
         android:layout_marginBottom="20dp" />
 
+<!-- Auto Response Keywords -->
+    <TextView
+        android:text="@string/auto_response_words_header"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"/>
+    <TextView
+        android:id="@+id/autoRespondWordsText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <Button
+        android:id="@+id/editAutoRespondWords"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:onClick="onClick"
+        android:layout_marginBottom="20dp" />
+
+<!-- API Credentials -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -65,12 +86,14 @@
         android:id="@+id/apiSecretKeyDisplay"
         android:paddingBottom="20dp" />
     <Button
-        android:id="@+id/changeApiCredentials"
+        android:id="@+id/editApiCredentials"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/edit"
         android:onClick="onClick"
         android:layout_marginBottom="20dp" />
+
+<!-- Instructions -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -91,6 +114,5 @@
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
         android:text="@string/send_example" />
-
 </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>

@@ -12,6 +12,7 @@ import com.twitter.sdk.android.core.TwitterSession
 object PreferencesUtil {
     // Keys for all of the values that are stored in the sharedPreferences file.
     private const val RegisteredNumbersKey = "REGISTERED_NUMBERS"
+    private const val ResponseWordsKey = "RESPONSE_WORDS"
     private const val AdminNumberKey = "ADMIN_NUMBER"
     private const val TwitterHandleKey = "_TWITTER_HANDLE"
     private const val TwitterApiKey = "TWITTER_API_KEY"
@@ -38,6 +39,10 @@ object PreferencesUtil {
 
     fun getRegisteredNumbers(): Set<String> {
         return preferences!!.getStringSet(RegisteredNumbersKey, mutableSetOf<String>())!!
+    }
+
+    fun getResponseWords(): Set<String> {
+        return preferences!!.getStringSet(ResponseWordsKey, mutableSetOf<String>())!!
     }
 
     fun removeRegisteredNumber(phoneNumber: String) {
@@ -87,6 +92,12 @@ object PreferencesUtil {
         preferences!!.edit().
         putString(TwitterApiKey, authConfig.consumerKey).
         putString(TwitterSecretKey, authConfig.consumerSecret).
+        apply()
+    }
+
+    fun setResponseWords(words: Set<String>) {
+        preferences!!.edit().
+        putStringSet(ResponseWordsKey, words).
         apply()
     }
 }

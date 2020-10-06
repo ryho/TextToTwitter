@@ -113,6 +113,17 @@ class SmsReceiver : BroadcastReceiver() {
                         break
                     }
                 }
+
+                // Auto respond to action keywords
+                val words = fullBody.split(" ")
+                val keywords = PreferencesUtil.getResponseWords()
+                for (word in words) {
+                    for (keyword in keywords) {
+                        if (word == keyword) {
+                            SmsManager.getDefault().sendTextMessage(fromNumber, null, keyword, null, null)
+                        }
+                    }
+                }
             }.start()
         } else {
             // Send the message to the admin if there was no mapping, since this is probably a mistake.
